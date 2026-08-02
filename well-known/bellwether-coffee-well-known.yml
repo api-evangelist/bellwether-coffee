@@ -1,0 +1,76 @@
+generated: '2026-08-02'
+method: searched
+source: https://bellwethercoffee.com/.well-known/api-catalog
+host: https://bellwethercoffee.com
+summary: >-
+  Bellwether Coffee publishes a genuine machine-readable discovery surface for
+  its marketing/product site even though it ships no public developer API: an
+  RFC 9727 /.well-known/api-catalog linkset that points at a structured
+  facts.json document and an llms.txt guide, plus a robots.txt carrying
+  Content Signals (contentsignals.org) AI-usage declarations. All three were
+  fetched and saved verbatim on 2026-08-02.
+documents:
+- path: /.well-known/api-catalog
+  standard: RFC 9727
+  status: 200
+  content_type: application/linkset+json
+  file: bellwether-coffee-api-catalog.json
+  url: https://bellwethercoffee.com/.well-known/api-catalog
+- path: /facts.json
+  standard: none (provider-defined structured facts document)
+  status: 200
+  content_type: application/json
+  file: bellwether-coffee-facts.json
+  url: https://bellwethercoffee.com/facts.json
+  note: >-
+    Referenced by the api-catalog linkset as service-desc. A static JSON
+    document of company/product/spec/pricing/economics facts - not a
+    programmable API endpoint.
+- path: /robots.txt
+  standard: Content Signals (contentsignals.org)
+  status: 200
+  content_type: text/plain
+  file: bellwether-coffee-robots.txt
+  url: https://bellwethercoffee.com/robots.txt
+  content_signal: search=yes, ai-input=yes, ai-train=yes
+  note: >-
+    Content-Signal declared for the wildcard group and repeated for the named
+    AI crawler group (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot,
+    Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended,
+    Applebot-Extended, Amazonbot, CCBot).
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
+- path: /.well-known/mcp.json
+  status: 404
+other_hosts_probed:
+- host: https://admin.bellwethercoffee.com
+  result: >-
+    Single-page-app catch-all - every /.well-known/* and /openapi.json path
+    returns HTTP 200 with the same 2,128-byte HTML shell. Rejected as a false
+    positive; no discovery documents present.
+- host: https://api.bellwethercoffee.com
+  result: >-
+    DNS resolves to a CloudFront distribution but TLS fails
+    (cert CN=*.cloudfront.net does not match the host) and every path returns
+    502 through -k. A private/internal origin, not a public API surface.
+- host: https://help.bellwethercoffee.com
+  result: >-
+    HubSpot-hosted help center; robots.txt Disallow: /, no discovery documents.
+x-evidence:
+  fetched: '2026-08-02'
+  probes:
+  - {url: 'https://bellwethercoffee.com/.well-known/api-catalog', http_status: 200, content_type: application/linkset+json}
+  - {url: 'https://bellwethercoffee.com/facts.json', http_status: 200, content_type: application/json}
+  - {url: 'https://bellwethercoffee.com/robots.txt', http_status: 200, content_type: text/plain}

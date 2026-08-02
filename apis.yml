@@ -1,17 +1,37 @@
 aid: bellwether-coffee
 name: Bellwether Coffee
-description: 'Bellwether Coffee is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: 'Bellwether Coffee is a Berkeley, California coffee-technology company
+  founded in 2013 by Ricardo Lopez that designs and manufactures an all-electric,
+  ventless, automatic commercial coffee roaster. The Bellwether Shop Roaster (SCA
+  Best New Product 2024) roasts 1.5 kg per batch on a standard 240V/30A circuit with
+  no gas line, exhaust, or construction, and is paired with a complete coffee business
+  program: a traceable Green Coffee Marketplace with ready-made roast profiles,
+  cloud-connected roast automation and inventory software, custom retail packaging
+  and labels, and ongoing service. Bellwether has raised roughly $92.7M across eight
+  rounds and serves 500+ customers across 26 countries. It publishes no public
+  developer API, but does maintain a genuine machine-readable web surface: an RFC
+  9727 /.well-known/api-catalog linkset, a structured facts.json, an llms.txt, and
+  Content Signals AI-usage declarations in robots.txt.'
+image: https://bellwethercoffee.com/og-image.jpg
 url: https://raw.githubusercontent.com/api-evangelist/bellwether-coffee/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass-2026-08-02
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Company
+- Coffee
+- Coffee Roasting
+- Food and Beverage
+- Hardware
+- Manufacturing
+- Climate Tech
+- Sustainability
+- Marketplace
+- Retail
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +39,52 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/bellwether-coffee-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/bellwether-coffee_stock/
+  url: https://bellwethercoffee.com
+- type: Product
+  url: https://bellwethercoffee.com/shop-roaster
+- type: Marketplace
+  url: https://bellwethercoffee.com/marketplace
+- type: Pricing
+  url: https://bellwethercoffee.com/order-now
+- type: Login
+  url: https://admin.bellwethercoffee.com/
+- type: Support
+  url: https://help.bellwethercoffee.com/
+- type: Blog
+  url: https://bellwethercoffee.com/blog
+- type: FAQ
+  url: https://bellwethercoffee.com/faq
+- type: Careers
+  url: https://bellwethercoffee.com/careers
+- type: Press
+  url: https://bellwethercoffee.com/press
+- type: TermsOfService
+  url: https://bellwethercoffee.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://bellwethercoffee.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/bellwether-coffee
+- type: LLMsTxt
+  url: llms/bellwether-coffee-llms.txt
+- type: WellKnown
+  url: well-known/bellwether-coffee-well-known.yml
+- type: APICatalog
+  url: well-known/bellwether-coffee-api-catalog.json
+- type: ContentSignal
+  url: well-known/bellwether-coffee-robots.txt
+- type: Packages
+  url: packages/bellwether-coffee-packages.yml
+- type: Conformance
+  url: conformance/bellwether-coffee-conformance.yml
+- type: Lifecycle
+  url: lifecycle/bellwether-coffee-lifecycle.yml
+x-secondary-market:
+  source: https://forgeglobal.com/bellwether-coffee_stock/
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1

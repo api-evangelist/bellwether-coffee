@@ -1,0 +1,21 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://bellwethercoffee.com/facts.json",
+      "service-desc": [
+        {
+          "href": "https://bellwethercoffee.com/facts.json",
+          "type": "application/json",
+          "title": "Bellwether Coffee facts — product, specs, pricing, economics, program"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://bellwethercoffee.com/llms.txt",
+          "type": "text/plain",
+          "title": "LLM-friendly guide to Bellwether Coffee"
+        }
+      ]
+    }
+  ]
+}

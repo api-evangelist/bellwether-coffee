@@ -1,0 +1,28 @@
+generated: '2026-08-02'
+method: searched
+source: https://bellwethercoffee.com/llms.txt
+file: bellwether-coffee-llms.txt
+http_status: 200
+content_type: text/plain; charset=utf-8
+bytes: 44007
+summary: >-
+  Provider-published llms.txt, saved verbatim. H1 + blockquote summary, then
+  link sections for Products, Who it's for, Proof & learning,
+  Machine-readable (facts.json), Contact, and a long Blog posts index. It is
+  a marketing/product knowledge surface for answer engines - it documents no
+  API, no authentication, and no endpoints, which is consistent with
+  Bellwether shipping no public developer API.
+sections:
+- Products
+- Who it's for
+- Proof & learning
+- Machine-readable
+- Contact
+- Blog posts
+x-evidence:
+  fetched: '2026-08-02'
+  url: https://bellwethercoffee.com/llms.txt
+  http_status: 200
+x-note: >-
+  No llms-full.txt is published at /llms-full.txt (404) and none is committed
+  here - see .gitignore.

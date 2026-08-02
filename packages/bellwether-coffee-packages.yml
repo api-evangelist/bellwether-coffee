@@ -1,0 +1,56 @@
+generated: '2026-08-02'
+method: searched
+source: npm registry search, PyPI JSON API, GitHub org listings
+summary: >-
+  No first-party API client library or SDK exists, because Bellwether Coffee
+  publishes no public developer API. Registry and GitHub-org searches turned
+  up one npm package that carries the Bellwether name (a fork of a Vue/D3
+  chart component, mirroring the bellwethercoffee-sw/Vue.D3.sunburst repo)
+  and nothing else. It is an internal UI dependency, not an API client, and
+  its npm maintainer is an individual rather than an org account, so it is
+  recorded as unconfirmed rather than official.
+packages: []
+api_clients: []
+related:
+- language: javascript
+  registry: npm
+  name: bellwethercoffee-vue-d3-sunburst
+  url: https://www.npmjs.com/package/bellwethercoffee-vue-d3-sunburst
+  version: 2.0.0-beta7
+  license: MIT
+  published: '2022-01-05'
+  last_modified: '2023-09-12'
+  npm_maintainers: [amostajo]
+  official: false
+  api_client: false
+  note: >-
+    Name-matched fork of vue-d3-sunburst; corroborated by the first-party
+    fork at github.com/bellwethercoffee-sw/Vue.D3.sunburst, but first-party
+    ownership of the npm publication is not confirmed. Not an API SDK.
+registries_probed:
+- {registry: npm, queries: [bellwether-coffee, bellwethercoffee, bellwether], first_party_sdk: false}
+- {registry: pypi, names: [bellwether-coffee, bellwethercoffee], status: 404}
+- {registry: pypi, names: [bellwether], status: 200, first_party: false, note: unrelated project}
+github_orgs:
+- org: https://github.com/bellwether-coffee
+  public_repos: 1
+  note: >-
+    Org metadata confirms first-party (blog bellwethercoffee.com, contact
+    ricardo@bellwethercoffee.com). Only public repo is bellwether-marketing
+    (CSS).
+- org: https://github.com/bellwethercoffee
+  name: Bellwether Coffee SW
+  public_repos: 3
+  note: >-
+    Forks of the Raspberry Pi linux kernel and tools plus the PayPal Here iOS
+    SDK distribution - evidence the roaster is a Raspberry Pi based connected
+    device. No API artifacts.
+- org: https://github.com/bellwethercoffee-sw
+  name: Bellwether Coffee Software Team
+  public_repos: 4
+  note: >-
+    Vue.D3.sunburst fork, laravel-plain-sqs (SQS connector), echo-module,
+    u-boot. Internal engineering forks; no API artifacts.
+x-evidence:
+  fetched: '2026-08-02'
+  no_sdk_reason: provider publishes no public API

@@ -1,0 +1,60 @@
+generated: '2026-08-02'
+method: searched
+source: >-
+  https://bellwethercoffee.com/shop-roaster,
+  https://bellwethercoffee.com/s/Shop-Roaster-Warranty-2025.pdf,
+  https://help.bellwethercoffee.com/, https://en.wikipedia.org/wiki/Bellwether_Coffee
+summary: >-
+  Bellwether Coffee has no API lifecycle to record - there is no public API,
+  therefore no version scheme, no deprecation policy, no Sunset/Deprecation
+  header support and no API status page. What it does have is a hardware
+  product lifecycle across three roaster generations, a published warranty,
+  and a product help center that maintains per-generation operation and
+  maintenance documentation.
+api_lifecycle:
+  applicable: false
+  versioning: null
+  deprecation: null
+  sla: null
+  status_page: null
+  note: >-
+    status.bellwethercoffee.com does not resolve; /status returns 404. No
+    status page, uptime commitment, or SLA is published, so no StatusPage or
+    Deprecation pointer is emitted.
+product_lifecycle:
+  generations:
+  - name: Bellwether Roaster (first production model)
+    released: '2018'
+    status: superseded
+  - name: Bellwether Series 2
+    released: '2022'
+    status: supported
+    support_docs: https://help.bellwethercoffee.com/series-2-operation-and-maintenance
+  - name: Bellwether Shop Roaster
+    released: '2024'
+    status: current
+    award: Specialty Coffee Association - Best New Product 2024
+    support_docs: https://help.bellwethercoffee.com/shop-roaster
+  durability:
+    average_roasts_before_failure: 2000
+    source: well-known/bellwether-coffee-facts.json
+  certifications: [UL 197, UL 710, NSF4, CE]
+  warranty:
+    url: https://bellwethercoffee.com/s/Shop-Roaster-Warranty-2025.pdf
+    http_status: 200
+    year: '2025'
+  brochure:
+    url: https://bellwethercoffee.com/s/Bellwether-Coffee-One.pdf
+    http_status: 200
+support:
+  help_center: https://help.bellwethercoffee.com/
+  sales_phone: '+1-510-210-1536'
+  contact: https://bellwethercoffee.com/contact-us
+  note: >-
+    HubSpot-hosted help center covering Shop Roaster and Series 2 operation
+    and maintenance plus a business FAQ. No developer or API documentation.
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-02'
+  status_page_probe: {host: 'status.bellwethercoffee.com', dns: none, http: null}
+  changelog_probe: {url: 'https://bellwethercoffee.com/changelog', http_status: 404}

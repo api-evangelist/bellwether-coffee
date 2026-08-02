@@ -1,0 +1,100 @@
+generated: '2026-08-02'
+method: searched
+source: >-
+  https://bellwethercoffee.com/.well-known/api-catalog,
+  https://bellwethercoffee.com/llms.txt,
+  https://bellwethercoffee.com/robots.txt
+summary: >-
+  Bellwether Coffee ships no public API, so the API-contract standards
+  (OpenAPI, OAuth 2.0, OIDC, RFC 9457, AsyncAPI, MCP, A2A) are all
+  not-applicable rather than failed. What it does conform to is the emerging
+  web/agent discovery layer: RFC 9727 api-catalog, llms.txt, and Content
+  Signals. Those three were fetched and verified on 2026-08-02.
+standards:
+- id: rfc9727-api-catalog
+  conforms: true
+  evidence: >-
+    GET https://bellwethercoffee.com/.well-known/api-catalog returned 200 with
+    Content-Type application/linkset+json and a valid linkset[] carrying an
+    anchor plus service-desc and service-doc arrays.
+- id: llms-txt
+  conforms: true
+  evidence: >-
+    GET https://bellwethercoffee.com/llms.txt returned 200 text/plain, 44,007
+    bytes, in llms.txt form (H1, blockquote summary, H2 link sections).
+- id: content-signals
+  conforms: true
+  evidence: >-
+    robots.txt declares "Content-Signal: search=yes, ai-input=yes,
+    ai-train=yes" (contentsignals.org) on both the wildcard group and a named
+    AI-crawler group of 12 user agents.
+- id: rfc9309-robots
+  conforms: true
+  evidence: robots.txt present with Allow/Disallow groups and a Sitemap directive.
+- id: sitemaps-xml
+  conforms: true
+  evidence: https://bellwethercoffee.com/sitemap.xml returned 200, valid urlset.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404 on every probed host.
+- id: openapi
+  conforms: false
+  applicable: false
+  evidence: >-
+    No OpenAPI/Swagger found. Probed /openapi.json, /openapi.yaml,
+    /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc against
+    bellwethercoffee.com (all 404), admin.bellwethercoffee.com (SPA catch-all
+    returning the same HTML shell for every path) and api.bellwethercoffee.com
+    (TLS name mismatch, 502 on every path).
+- id: graphql
+  conforms: false
+  applicable: false
+  evidence: /graphql 404 on the site host; SPA shell on admin; 502 on api host.
+- id: asyncapi
+  conforms: false
+  applicable: false
+  evidence: No event, streaming, or webhook surface documented anywhere public.
+- id: mcp
+  conforms: false
+  applicable: false
+  evidence: /mcp, /sse and /.well-known/mcp.json all 404; no MCP server published.
+- id: a2a
+  conforms: false
+  applicable: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json 404 on
+    bellwethercoffee.com; the 200s on admin.bellwethercoffee.com were the SPA
+    HTML catch-all and were rejected.
+- id: oauth2
+  conforms: false
+  applicable: false
+  evidence: /.well-known/oauth-authorization-server and /.well-known/oauth-protected-resource both 404.
+- id: openid-connect
+  conforms: false
+  applicable: false
+  evidence: /.well-known/openid-configuration 404.
+- id: rfc9457-problem-details
+  conforms: false
+  applicable: false
+  evidence: No public API surface to carry problem+json responses.
+compliance_program:
+  published: false
+  note: >-
+    No trust center, security page, or named certification (SOC 2, ISO 27001,
+    PCI DSS, GDPR statement beyond the privacy policy) found at /security,
+    /trust, /compliance, trust.bellwethercoffee.com or
+    security.bellwethercoffee.com. No `Compliance` pointer emitted.
+product_certifications:
+  note: >-
+    facts.json lists hardware certifications for the Shop Roaster. These are
+    equipment safety/emissions marks, not information-security or API
+    compliance certifications, and are deliberately not surfaced as a
+    Compliance pointer.
+  source: well-known/bellwether-coffee-facts.json
+x-evidence:
+  fetched: '2026-08-02'
+  hosts_probed:
+  - bellwethercoffee.com
+  - admin.bellwethercoffee.com
+  - api.bellwethercoffee.com
+  - help.bellwethercoffee.com
