@@ -12,6 +12,17 @@ description: 'Bellwether Coffee is a Berkeley, California coffee-technology comp
   developer API, but does maintain a genuine machine-readable web surface: an RFC
   9727 /.well-known/api-catalog linkset, a structured facts.json, an llms.txt, and
   Content Signals AI-usage declarations in robots.txt.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://bellwethercoffee.com/og-image.jpg
 url: https://raw.githubusercontent.com/api-evangelist/bellwether-coffee/refs/heads/main/apis.yml
 x-type: company
