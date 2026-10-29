@@ -64,40 +64,85 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bellwether Coffee is a Berkeley, California coffee-technology company founded in 2013 by Ricardo Lopez. It manufactures an all-electric, ventless, automatic commercial coffee roaster — the Shop Roaster (SCA Best New Product 2024) — and pairs it with a Green Coffee Marketplace, roast-automation and inventory software, retail packaging, and service.
+Bellwether Coffee is a Berkeley, California coffee-technology company founded in 2013 by Ricardo Lopez that designs and manufactures an all-electric, ventless, automatic commercial coffee roaster. The Bellwether Shop Roaster (SCA Best New Product 2024) roasts 1.5 kg per batch on a standard 240V/30A circuit with no gas line, exhaust, or construction, and is paired with a complete coffee business program: a traceable Green Coffee Marketplace with ready-made roast profiles, cloud-connected roast automation and inventory software, custom retail packaging and labels, and ongoing service. Bellwether has raised roughly $92.7M across eight rounds and serves 500+ customers across 26 countries. It publishes no public developer API, but does maintain a genuine machine-readable web surface: an RFC 9727 /.well-known/api-catalog linkset, a structured facts.json, an llms.txt, and Content Signals AI-usage declarations in robots.txt.
 
-- Website — https://bellwethercoffee.com
-- Product — https://bellwethercoffee.com/shop-roaster
-- Green Coffee Marketplace — https://bellwethercoffee.com/marketplace
-- Help center — https://help.bellwethercoffee.com/
-- Secondary-market listing — https://forgeglobal.com/bellwether-coffee_stock/
+**Areas:** Company · Coffee · Coffee Roasting · Food and Beverage · Hardware · Manufacturing · Climate Tech · Sustainability · Marketplace · Retail
 
-## API surface
+## Bellwether Coffee on APIs.io
 
-**Bellwether Coffee publishes no public developer API.** Contract discovery on
-2026-08-02 probed `bellwethercoffee.com`, `admin.bellwethercoffee.com`,
-`api.bellwethercoffee.com` and `help.bellwethercoffee.com` for OpenAPI/Swagger,
-GraphQL, MCP and A2A and found none. `api.bellwethercoffee.com` resolves to a
-CloudFront distribution but fails TLS name validation and returns 502 — a private
-origin behind the customer admin app, not a public API. `admin.bellwethercoffee.com`
-is a single-page app that answers 200 with the same HTML shell for every path,
-including `/.well-known/*`; those were rejected as false positives.
+Everything profiled for Bellwether Coffee is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bellwether-coffee/](https://apis.io/providers/bellwether-coffee/)** — or go straight to one of the APIs or properties below.
 
-## What it does publish
+### Published properties
 
-A real machine-readable *web* surface, harvested verbatim:
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Artifact | Source | Notes |
-|---|---|---|
-| [`well-known/`](well-known/) | `/.well-known/api-catalog` | RFC 9727 linkset, `application/linkset+json` |
-| [`well-known/bellwether-coffee-facts.json`](well-known/bellwether-coffee-facts.json) | `/facts.json` | Structured product, spec, pricing and economics facts |
-| [`well-known/bellwether-coffee-robots.txt`](well-known/bellwether-coffee-robots.txt) | `/robots.txt` | Content Signals: `search=yes, ai-input=yes, ai-train=yes` |
-| [`llms/`](llms/) | `/llms.txt` | 44 KB provider-published llms.txt |
-| [`conformance/`](conformance/) | derived | Which standards apply, and which are N/A for a no-API provider |
-| [`lifecycle/`](lifecycle/) | searched | Hardware generations, warranty, support — no API lifecycle |
-| [`packages/`](packages/) | searched | No first-party SDK; registry search recorded |
-| [`security/`](security/) | probed | TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture |
+#### Security (1)
 
-That combination — api-catalog + facts.json + llms.txt + Content Signals — is
-unusually complete for a hardware company with no API, and is the interesting
-finding in this repo.
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bellwether Coffee Domain Security](https://apis.io/security/bellwether-coffee/bellwether-coffee-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bellwethercoffee.com)
+- [Pricing](https://bellwethercoffee.com/order-now)
+- [Support](https://help.bellwethercoffee.com/)
+- [Blog](https://bellwethercoffee.com/blog)
+- [Terms of service](https://bellwethercoffee.com/terms-of-use)
+- [Privacy policy](https://bellwethercoffee.com/privacy-policy)
+- [GitHub](https://github.com/bellwether-coffee)
+
+## API Evangelist rating
+
+**Kin Score 17.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 38.2 |
+
+**Agent readiness 2.2** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | yes |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bellwether-coffee/](https://apis.io/providers/bellwether-coffee/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bellwether Coffee: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bellwether-coffee/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
